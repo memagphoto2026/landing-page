@@ -20,8 +20,10 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
 }
 
 body {
@@ -29,7 +31,6 @@ body {
     line-height: 1.6;
     color: var(--text-dark);
     background-color: var(--white);
-    overflow-x: hidden;
 }
 
 h1, h2, h3, .section-title {
@@ -147,6 +148,7 @@ nav ul li a:hover {
     height: 100vh;
     display: flex;
     align-items: flex-start;
+    justify-content: center;
     padding-top: 180px;
     color: var(--white);
     background: #000;
@@ -163,16 +165,26 @@ nav ul li a:hover {
 }
 
 .video-background iframe {
-    width: 100vw;
-    height: 56.25vw;
-    min-height: 100vh;
-    min-width: 177.77vh;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     pointer-events: none;
     opacity: 0.6;
+}
+
+@media (max-aspect-ratio: 16/9) {
+    .video-background iframe {
+        width: 177.77vh;
+        height: 100vh;
+    }
+}
+
+@media (min-aspect-ratio: 16/9) {
+    .video-background iframe {
+        width: 100vw;
+        height: 56.25vw;
+    }
 }
 
 .hero-overlay {
@@ -682,19 +694,23 @@ footer {
 }
 
 @media (max-width: 768px) {
-    #hero-title { font-size: 2.5rem; }
-    .section-title { font-size: 2.2rem; }
+    #hero { padding-top: 120px; }
+    #hero-title { font-size: 2rem; padding: 0 10px; }
+    #hero-desc { font-size: 1rem; padding: 0 20px; }
+    
+    .section-title { font-size: 2rem; }
     .gallery-grid { grid-template-columns: 1fr; }
     .contact-grid { grid-template-columns: 1fr; }
     
-    .b2b-banner { height: 200px; }
-    .banner-content { padding: 30px 20px; }
-    .banner-content h3 { font-size: 1.5rem; }
+    .b2b-banner { height: 180px; }
+    .banner-content { padding: 20px 15px; }
+    .banner-content h3 { font-size: 1.3rem; }
     .b2b-card { padding: 20px; }
     .product-card { padding: 20px; }
     .contact-card { padding: 30px; }
     
     .feature-card { padding: 30px 20px; }
+    .feature-overlap { margin-top: -30px; }
 }
 
 /* Reveal Animations */
