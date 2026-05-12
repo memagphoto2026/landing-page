@@ -1,244 +1,251 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memag Photo Studio | Chế tác ảnh nam châm nghệ thuật</title>
+    <meta name="description" content="Memag Photo Studio - Chế tác ảnh nam châm cao cấp với công nghệ in 6 màu chuẩn Studio và khắc Laser tinh xảo. Quà tặng kỷ niệm độc đáo cho cá nhân và Studio.">
+    <meta name="keywords" content="photo magnet, ảnh nam châm, memag, in ảnh cao cấp, khắc laser, quà tặng studio">
+    <title>Memag Photo Studio | Giữ trọn kỷ niệm, Nâng tầm thương hiệu</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-
 <body>
     <!-- Header Section -->
     <header id="header">
         <div class="container">
             <div class="logo">
-                <a href="#"><img src="img/Logo_website_vn.png" alt="Memag Logo" class="logo-img" id="main-logo"
-                        data-logo-vi="img/Logo_website_vn.png" data-logo-en="img/Logo_website_eg.png"></a>
+                <a href="#"><img src="img/Logo_website_vn.png" alt="Memag Logo" class="logo-img" id="main-logo" data-logo-vi="img/Logo_website_vn.png" data-logo-en="img/Logo_website_el.png"></a>
             </div>
-
-            <div class="menu-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-
+            
             <nav id="navbar">
                 <ul id="menu">
-                    <li><a href="#about" data-vi="Về chúng tôi" data-en="About Us">Về chúng tôi</a></li>
-                    <li><a href="#products" data-vi="Sản phẩm" data-en="Products">Sản phẩm</a></li>
-                    <li><a href="#gallery" data-vi="Album hình" data-en="Gallery">Album hình</a></li>
-                    <li><a href="#contact" data-vi="Liên hệ" data-en="Contact">Liên hệ</a></li>
+                    <li><a href="#about" data-vi="VỀ MEMAG" data-en="ABOUT">VỀ MEMAG</a></li>
+                    <li><a href="#products" data-vi="SẢN PHẨM" data-en="PRODUCTS">SẢN PHẨM</a></li>
+                    <li><a href="#gallery" data-vi="THƯ VIỆN" data-en="GALLERY">THƯ VIỆN</a></li>
+                    <li><a href="#contact" data-vi="LIÊN HỆ" data-en="CONTACT">LIÊN HỆ</a></li>
                 </ul>
             </nav>
-            <div class="lang-switcher">
-                <button id="btn-vi" class="active">VN</button>
-                <span>|</span>
-                <button id="btn-en">EN</button>
+
+            <div class="header-right">
+                <div class="lang-switcher">
+                    <button id="btn-vi" class="active">VN</button>
+                    <button id="btn-en">EN</button>
+                </div>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- Hero Banner with YouTube Video -->
+    <!-- Hero Section -->
     <section id="hero">
         <div class="video-background">
-            <iframe
-                src="https://www.youtube.com/embed/iUtnZpzkbG8?autoplay=1&mute=1&controls=0&loop=1&playlist=iUtnZpzkbG8&showinfo=0&rel=0&enablejsapi=1"
-                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+            <iframe 
+                id="hero-video"
+                src="https://www.youtube.com/embed/vSRvHCXM6Tc?autoplay=1&mute=1&controls=0&loop=1&playlist=vSRvHCXM6Tc&showinfo=0&rel=0&enablejsapi=1" 
+                frameborder="0" 
+                allow="autoplay; encrypted-media" 
+                allowfullscreen>
             </iframe>
         </div>
         <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h2 id="hero-title" data-vi="Nơi kỷ niệm trở thành nghệ thuật thủ công"
-                data-en="Where memories become craft art">Nơi kỷ niệm trở thành nghệ thuật thủ công</h2>
-            <p id="hero-desc" data-vi="Chế tác ảnh nam châm cao cấp cho cá nhân, Studio và doanh nghiệp"
-                data-en="Premium photo magnets for individuals, studios, and businesses">Chế tác ảnh nam châm cao cấp
-                cho cá nhân, Studio và doanh nghiệp</p>
-            <a href="#products" class="btn" data-vi="Khám phá ngay" data-en="Explore Now">Khám phá ngay</a>
+        <div class="container">
+            <div class="hero-content reveal">
+                <h2 id="hero-title" data-vi="GẮN KHOẢNH KHẮC,<br>GIỮ YÊU THƯƠNG" data-en="ATTACH MOMENTS,<br>KEEP LOVE">GẮN KHOẢNH KHẮC,<br>GIỮ YÊU THƯƠNG</h2>
+                <p id="hero-desc" data-vi="Món quà tinh tế cho những yêu thương ở lại" data-en="A refined gift for the love that stays">Món quà tinh tế cho những yêu thương ở lại</p>
+                <div class="hero-btns">
+                    <a href="#features" class="scroll-down-icon"><i class="arrow-down"></i></a>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="section">
+    <!-- Feature Overlap Section -->
+    <section id="features" class="container">
+        <div class="feature-overlap reveal">
+            <div class="feature-card">
+                <i class="fa-solid fa-wand-magic-sparkles feature-icon"></i>
+                <h4 data-vi="In 6 màu Studio" data-en="6-Color Printing">In 6 màu Studio</h4>
+                <p data-vi="Độ sâu màu tuyệt đối, bền bỉ theo thời gian." data-en="Absolute color depth, durable over time.">Độ sâu màu tuyệt đối, bền bỉ theo thời gian.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-gem feature-icon"></i>
+                <h4 data-vi="Khắc Laser Logo" data-en="Laser Branding">Khắc Laser Logo</h4>
+                <p data-vi="Định vị thương hiệu riêng cho từng đối tác." data-en="Unique branding for every partner.">Định vị thương hiệu riêng cho từng đối tác.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-truck-fast feature-icon"></i>
+                <h4 data-vi="Giao hàng toàn quốc" data-en="Nationwide Delivery">Giao hàng toàn quốc</h4>
+                <p data-vi="Đóng gói thủ công, vận chuyển an toàn." data-en="Handcrafted packaging, safe shipping.">Đóng gói thủ công, vận chuyển an toàn.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted By Section -->
+    <section id="trusted" class="reveal">
         <div class="container">
-            <div class="about-wrapper">
+            <div class="partner-logos">
+                <span class="partner-name">WEDDING STUDIOS</span>
+                <span class="partner-name">EVENT AGENCIES</span>
+                <span class="partner-name">PREMIUM BRANDS</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section with Slanted Divider -->
+    <section id="about" class="slanted-bottom">
+        <div class="container">
+            <div class="about-wrapper reveal">
                 <div class="about-image">
-                    <img src="img/z7781972037764_891bc4ba4aca41c839b4c9382d571e6c.jpg" alt="Memag Craftmanship"
-                        class="hover-effect">
+                    <img src="img/about_memag.png" alt="Memag Branding Card">
                 </div>
                 <div class="about-text">
-                    <h3 class="section-title left" data-vi="Về Chúng Tôi" data-en="About Us">Về Chúng Tôi</h3>
-                    <p data-vi="Memag Photo Studio ra đời từ niềm đam mê với những bức ảnh và mong muốn biến chúng thành những vật phẩm lưu niệm có thể chạm vào được. Mỗi sản phẩm của chúng tôi là sự kết hợp giữa công nghệ in sắc nét và quy trình hoàn thiện thủ công tỉ mỉ."
-                        data-en="Memag Photo Studio was born from a passion for photography and the desire to transform digital memories into tangible keepsakes. Every product we create is a blend of high-definition printing and meticulous handcrafted finishing.">
-                        Memag Photo Studio ra đời từ niềm đam mê với những bức ảnh và mong muốn biến chúng thành những
-                        vật phẩm lưu niệm có thể chạm vào được. Mỗi sản phẩm của chúng tôi là sự kết hợp giữa công nghệ
-                        in sắc nét và quy trình hoàn thiện thủ công tỉ mỉ.
+                    <h3 class="section-title" data-vi="VỀ MEMAG STUDIO" data-en="ABOUT MEMAG STUDIO">VỀ MEMAG STUDIO</h3>
+                    <p data-vi="Memag Studio bắt đầu từ niềm yêu thích những khung hình và mong muốn đưa từng kỷ niệm tuyệt vời bước ra khỏi màn hình điện thoại. Tại đây, chúng mình lưu giữ những khoảnh khắc quý giá của bạn thành những món quà lưu niệm tinh tế, bền bỉ với thời gian nhờ sự kết hợp giữa công nghệ in sắc nét và quy trình hoàn thiện tận tâm." data-en="Memag Studio started from a passion for frames and the desire to bring every wonderful memory out of the phone screen. Here, we preserve your precious moments into exquisite, durable souvenirs through a combination of sharp printing technology and dedicated finishing.">
+                        Memag Studio bắt đầu từ niềm yêu thích những khung hình và mong muốn đưa từng kỷ niệm tuyệt vời bước ra khỏi màn hình điện thoại. Tại đây, chúng mình lưu giữ những khoảnh khắc quý giá của bạn thành những món quà lưu niệm tinh tế, bền bỉ với thời gian nhờ sự kết hợp giữa công nghệ in sắc nét và quy trình hoàn thiện tận tâm.
                     </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section with Parallax -->
+    <section id="gallery" class="slanted-top slanted-bottom">
+        <div class="parallax-bg"></div>
+        <div class="container">
+            <h3 class="section-title reveal" data-vi="Bộ Sưu Tập" data-en="Our Portfolio">Bộ Sưu Tập</h3>
+            <div class="gallery-grid reveal">
+                <div class="gallery-item">
+                    <img src="img/gallery_1.png" alt="Gallery 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/gallery_2.png" alt="Gallery 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/gallery_3.png" alt="Gallery 3">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/gallery_4.png" alt="Gallery 4">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/gallery_5.png" alt="Gallery 5">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/gallery_6.png" alt="Gallery 6">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Products Section -->
-    <section id="products" class="section bg-light">
+    <section id="products">
         <div class="container">
-            <h3 class="section-title" data-vi="Bảng Giá Dịch Vụ" data-en="Our Pricing">Bảng Giá Dịch Vụ</h3>
-
-            <div class="product-category">
-                <h4 class="category-title" data-vi="Dành cho Cá nhân" data-en="For Individuals">Dành cho Cá nhân</h4>
+            <h3 class="section-title reveal" data-vi="Các Combo và giá tham khảo" data-en="Combos & Pricing">Các Combo và giá tham khảo</h3>
+            
+            <div class="product-group reveal">
+                <h4 class="group-title" data-vi="Dành cho cá nhân" data-en="For Individuals">Dành cho cá nhân</h4>
                 <div class="products-grid">
                     <div class="product-card">
-                        <div class="product-img">
-                            <img src="img/GOPR0365.JPG" alt="Single Magnet" class="hover-effect">
+                        <div class="product-img-wrapper">
+                            <img src="img/single_magnet.png" alt="Single Magnet">
                         </div>
-                        <h5 data-vi="In lẻ 1 cái" data-en="Single Print">In lẻ 1 cái</h5>
+                        <h5 data-vi="In Lẻ 1 Ảnh" data-en="Single Print">In Lẻ 1 Ảnh</h5>
                         <p class="price">20k</p>
+                        <p data-vi="In theo yêu cầu từ 1 cái." data-en="Custom print from 1 piece.">In theo yêu cầu từ 1 cái.</p>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img-wrapper">
+                            <div class="quantity-badge badge-left"><i class="fa-solid fa-image"></i> x 3</div>
+                            <img src="img/combo_3.png" alt="Combo 3 Magnets">
+                        </div>
+                        <h5 data-vi="Combo 3 Ảnh" data-en="Combo 3 Prints">Combo 3 Ảnh</h5>
+                        <p class="price">55k</p>
+                        <p data-vi="Bộ 3 cái túi zip cao cấp." data-en="Pack of 3 in premium zipper bags.">Bộ 3 cái túi zip cao cấp.</p>
                     </div>
                     <div class="product-card highlight">
-                        <div class="product-img">
-                            <img src="img/GOPR0366.JPG" alt="Combo 3" class="hover-effect">
+                        <div class="product-img-wrapper">
+                            <div class="quantity-badge badge-left"><i class="fa-solid fa-image"></i> x 6</div>
+                            <img src="img/combo_6.png" alt="Combo 6 Prints">
                         </div>
-                        <h5 data-vi="Combo 3 cái" data-en="Combo 3 Pack">Combo 3 cái</h5>
-                        <p class="price">55k</p>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-img">
-                            <img src="img/GOPR0367.JPG" alt="Combo 6" class="hover-effect">
-                        </div>
-                        <h5 data-vi="Combo 6 cái" data-en="Combo 6 Pack">Combo 6 cái</h5>
+                        <h5 data-vi="Combo 6 Ảnh" data-en="Combo 6 Prints">Combo 6 Ảnh</h5>
                         <p class="price">100k</p>
+                        <p data-vi="Bộ 6 cái - Lựa chọn tốt nhất." data-en="Pack of 6 - Best value choice.">Bộ 6 cái - Lựa chọn tốt nhất.</p>
                     </div>
                 </div>
             </div>
 
-            <div class="product-category mt-50">
-                <h4 class="category-title" data-vi="Event & Studio" data-en="For Events & Studios">Event & Studio</h4>
-                <div class="products-grid">
-                    <div class="product-card b2b">
-                        <h5 data-vi="Gói 100 cái" data-en="100 Pack">Gói 100 cái</h5>
-                        <p data-vi="Phù hợp cho tiệc nhỏ, họp fan." data-en="Ideal for small parties, fan meetings.">Phù
-                            hợp cho tiệc nhỏ, họp fan.</p>
+            <div class="product-group reveal" style="margin-top: 80px;">
+                <h4 class="group-title" data-vi="HỢP TÁC & GIẢI PHÁP CHO DOANH NGHIỆP" data-en="B2B SOLUTIONS & PARTNERSHIPS">HỢP TÁC & GIẢI PHÁP CHO DOANH NGHIỆP</h4>
+                
+                <div class="b2b-container">
+                    <div class="b2b-banner">
+                        <img src="img/b2b_banner.png" alt="B2B Solutions Banner">
+                        <div class="banner-content">
+                            <h6 style="color: var(--primary-orange); letter-spacing: 2px; margin-bottom: 10px; font-weight: 700;">EVENT & STUDIO</h6>
+                            <h3 data-vi="Giải Pháp Thương Hiệu Toàn Diện" data-en="Comprehensive Branding Solutions">Giải Pháp Thương Hiệu Toàn Diện</h3>
+                        </div>
                     </div>
-                    <div class="product-card b2b">
-                        <h5 data-vi="Gói 300 cái" data-en="300 Pack">Gói 300 cái</h5>
-                        <p data-vi="Ưu đãi cho event tầm trung." data-en="Discounts for medium events.">Ưu đãi cho event
-                            tầm trung.</p>
-                    </div>
-                    <div class="product-card b2b">
-                        <h5 data-vi="Gói 500+ cái" data-en="500+ Pack">Gói 500+ cái</h5>
-                        <p data-vi="Chiết khấu cực cao cho số lượng lớn." data-en="High discounts for bulk orders.">
-                            Chiết khấu cực cao cho số lượng lớn.</p>
-                    </div>
-                    <div class="product-card b2b highlight">
-                        <h5 data-vi="Hợp tác lâu dài" data-en="Long-term Partnership">Hợp tác lâu dài</h5>
-                        <p data-vi="Dành cho các Studio cưới & Nhãn hàng." data-en="For Wedding Studios & Brands.">Dành
-                            cho các Studio cưới & Nhãn hàng.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Gallery Section -->
-    <section id="gallery" class="section">
-        <div class="container">
-            <h3 class="section-title" data-vi="Album Hình" data-en="Photo Gallery">Album Hình</h3>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="img/GOPR0368.JPG" alt="Gallery 1" class="hover-effect">
-                </div>
-                <div class="gallery-item">
-                    <img src="img/z7781972021259_27cd7f033407505034264d1e64086acd.jpg" alt="Gallery 2"
-                        class="hover-effect">
-                </div>
-                <div class="gallery-item">
-                    <img src="img/z7781972021823_468220b85b20e78b3bb2a7b8aa2a168a.jpg" alt="Gallery 3"
-                        class="hover-effect">
-                </div>
-                <div class="gallery-item">
-                    <img src="img/z7781972026154_7ea171585c5aaf5934d2334b5264ec99.jpg" alt="Gallery 4"
-                        class="hover-effect">
-                </div>
-                <div class="gallery-item">
-                    <img src="img/z7781972027182_27febb03006c2c8422c930d912f82ec0.jpg" alt="Gallery 5"
-                        class="hover-effect">
-                </div>
-                <div class="gallery-item">
-                    <img src="img/z7781972032405_7cde1f7d15e5a84088391f8431e0fc7f.jpg" alt="Gallery 6"
-                        class="hover-effect">
-                </div>
-            </div>
-        </div>
-    </section>
+                    <div class="b2b-grid">
+                        <div class="b2b-card">
+                            <h5 data-vi="Gói 100 - 300 cái" data-en="100 - 300 Pack">Gói 100 - 300 cái</h5>
+                            <p data-vi="Phù hợp cho Tiệc, Sự kiện, Fan Meeting,..." data-en="Ideal for Parties, Events, Fan Meetings,...">Phù hợp cho Tiệc, Sự kiện, Fan Meeting,...</p>
+                        </div>
+                        <div class="b2b-card">
+                            <h5 data-vi="Gói 500+ cái" data-en="500+ Pack">Gói 500+ cái</h5>
+                            <p data-vi="Chiết khấu cao cho số lượng lớn." data-en="High discount for high volume.">Chiết khấu cao cho số lượng lớn.</p>
+                        </div>
+                        <div class="b2b-card">
+                            <h5 data-vi="Hợp tác lâu dài" data-en="Long-term Partnership">Hợp tác lâu dài</h5>
+                            <p data-vi="Dành cho các Studio / Nhãn hàng / Doanh nghiệp." data-en="For Studios / Brands / Corporates.">Dành cho các Studio / Nhãn hàng / Doanh nghiệp.</p>
+                        </div>
+                    </div>
 
-    <!-- Partners Section -->
-    <section id="partners" class="section">
-        <div class="container">
-            <h3 class="section-title" data-vi="Đối Tác & Khách Hàng" data-en="Partners & Clients">Đối Tác & Khách Hàng</h3>
-            <div class="partners-slider">
-                <div class="partners-track">
-                    <!-- Bạn có thể thay link ảnh logo thực tế vào đây -->
-                    <div class="partner-logo">Partner 1</div>
-                    <div class="partner-logo">Partner 2</div>
-                    <div class="partner-logo">Partner 3</div>
-                    <div class="partner-logo">Partner 4</div>
-                    <div class="partner-logo">Partner 5</div>
-                    <div class="partner-logo">Partner 6</div>
-                    <!-- Duplicate for infinite scroll -->
-                    <div class="partner-logo">Partner 1</div>
-                    <div class="partner-logo">Partner 2</div>
-                    <div class="partner-logo">Partner 3</div>
-                    <div class="partner-logo">Partner 4</div>
+                    <div style="text-align: center; margin-top: 40px;">
+                        <a href="https://zalo.me/0981712157" class="btn btn-large">Nhận Báo Giá Chi Tiết</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section bg-light">
+    <section id="contact" class="slanted-top">
         <div class="container">
-            <h3 class="section-title" data-vi="Liên Hệ" data-en="Contact Us">Liên Hệ</h3>
-            <div class="contact-grid">
+            <h3 class="section-title reveal" data-vi="Kết Nối Với Memag" data-en="Connect With Us">Kết Nối Với Memag</h3>
+            <div class="contact-grid reveal">
                 <div class="contact-card">
-                    <h4 data-vi="Studio TP. Hồ Chí Minh" data-en="HCM City Studio">Studio TP. Hồ Chí Minh</h4>
-                    <p><strong>Zalo:</strong> <a href="https://zalo.me/0981712157">098 171 21 57</a></p>
-                    <p data-vi="Địa chỉ: K26 Đường D15A, KDC River Park, Phước Long, TP. Thủ Đức"
-                        data-en="Address: K26 D15A St, River Park, Phuoc Long, Thu Duc City">Địa chỉ: K26 Đường D15A,
-                        KDC River Park, Phước Long, TP. Thủ Đức</p>
+                    <h4 data-vi="TP. Hồ Chí Minh" data-en="Ho Chi Minh City">TP. Hồ Chí Minh</h4>
+                    <p>Zalo: <a href="https://zalo.me/0981712157">0981712157</a></p>
+                    <p data-vi="K26 Đường D15A, River Park, Thủ Đức" data-en="K26 D15A St, River Park, Thu Duc">K26 Đường D15A, River Park, Thủ Đức</p>
                 </div>
                 <div class="contact-card">
-                    <h4 data-vi="Chi nhánh Đà Lạt" data-en="Dalat Branch">Chi nhánh Đà Lạt</h4>
-                    <p><strong>Hotline:</strong> <a href="tel:0907728548">090 772 85 48</a></p>
-                    <p data-vi="Địa chỉ: 348/5 Phan Đình Phùng, TP. Đà Lạt"
-                        data-en="Address: 348/5 Phan Dinh Phung, Dalat City">Địa chỉ: 348/5 Phan Đình Phùng, TP. Đà Lạt
-                    </p>
+                    <h4 data-vi="Chi Nhánh Đà Lạt" data-en="Dalat Branch">Chi Nhánh Đà Lạt</h4>
+                    <p>Hotline: <a href="tel:0907728548">0907728548</a></p>
+                    <p data-vi="348/5 Phan Đình Phùng, TP. Đà Lạt" data-en="348/5 Phan Dinh Phung, Dalat City">348/5 Phan Đình Phùng, TP. Đà Lạt</p>
                 </div>
-            </div>
-            <div class="contact-email">
-                <p><strong>Email:</strong> hello@memag.art</p>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer id="main-footer">
+    <footer>
         <div class="container">
             <div class="footer-social">
-                <a href="https://www.facebook.com/profile.php?id=61570733879543" target="_blank"
-                    rel="noopener noreferrer">
-                    Facebook Fanpage
+                <a href="https://www.facebook.com/memagphoto" target="_blank" rel="noopener noreferrer">
+                    FACEBOOK.COM/MEMAGPHOTO
                 </a>
             </div>
-            <p>&copy; 2026 Memag Photo Studio. Dalat - Ho Chi Minh City.</p>
+            <p>&copy; 2026 Memag Photo Studio. All rights reserved.</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
-
 </html>

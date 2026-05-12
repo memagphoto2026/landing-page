@@ -3,12 +3,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnVi = document.getElementById('btn-vi');
     const btnEn = document.getElementById('btn-en');
     
-    // Scroll Effect
+    // Scroll Effect for Header
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             header.classList.add('scrolled');
         } else {
             header.classList.remove('scrolled');
+        }
+
+        // Parallax Effect for Gallery
+        const parallaxBg = document.querySelector('.parallax-bg');
+        if (parallaxBg) {
+            let offset = window.pageYOffset;
+            parallaxBg.style.transform = `translateY(${offset * 0.3}px)`;
         }
     });
 
@@ -16,26 +23,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const translatableElements = document.querySelectorAll('[data-vi]');
 
     function switchLanguage(lang) {
-        // Switch Text
         translatableElements.forEach(el => {
             const text = el.getAttribute(`data-${lang}`);
             if (text) {
                 if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
                     el.placeholder = text;
                 } else {
-                    el.innerText = text;
+                    el.innerHTML = text; // Use innerHTML to support <br>
                 }
             }
         });
 
-        // Switch Logo
         const mainLogo = document.getElementById('main-logo');
         if (mainLogo) {
             const newLogo = mainLogo.getAttribute(`data-logo-${lang}`);
             if (newLogo) mainLogo.src = newLogo;
         }
 
-        // Update active button state
         if (lang === 'vi') {
             btnVi.classList.add('active');
             btnEn.classList.remove('active');
@@ -59,22 +63,41 @@ document.addEventListener('DOMContentLoaded', () => {
         navbar.classList.toggle('active');
     });
 
-    // Smooth Scroll for Nav Links
-    document.querySelectorAll('nav a').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Close mobile menu after clicking
-            mobileMenu.classList.remove('is-active');
-            navbar.classList.remove('active');
+    // Intersection Observer for Animations
+    const observerOptions = {
+        threshold: 0.15,
+        rootMargin: "0px 0px -50px 0px"
+    };
 
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            if (targetSection) {
-                window.scrollTo({
-                    top: targetSection.offsetTop - 80,
-                    behavior: 'smooth'
-                });
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach(el => {
+        observer.observe(el);
+    });
+
+    // Smooth Scroll
+    document.querySelectorAll('nav a, .btn').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href.startsWith('#')) {
+                e.preventDefault();
+                mobileMenu.classList.remove('is-active');
+                navbar.classList.remove('active');
+
+                const targetSection = document.querySelector(href);
+                if (targetSection) {
+                    const headerHeight = header.offsetHeight;
+                    window.scrollTo({
+                        top: targetSection.offsetTop - headerHeight + 50,
+                        behavior: 'smooth'
+                    });
+                }
             }
         });
     });
