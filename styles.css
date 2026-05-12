@@ -137,14 +137,20 @@ nav ul li a:hover {
     color: var(--primary-orange);
 }
 
+.menu-toggle {
+    display: none;
+}
+
 /* Hero Section */
 #hero {
     position: relative;
     height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    padding-top: 180px;
     color: var(--white);
     background: #000;
+    text-align: center;
 }
 
 .video-background {
@@ -182,12 +188,13 @@ nav ul li a:hover {
 .hero-content {
     position: relative;
     z-index: 3;
-    max-width: 700px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 #hero-title {
-    font-size: 4.5rem;
-    line-height: 1.1;
+    font-size: 3.5rem;
+    line-height: 1.2;
     margin-bottom: 20px;
     font-weight: 900;
 }
@@ -543,12 +550,6 @@ nav ul li a:hover {
     line-height: 1.6;
 }
 
-@media (max-width: 768px) {
-    .b2b-grid { grid-template-columns: 1fr; }
-    .b2b-banner { height: 250px; }
-    .banner-content h3 { font-size: 1.8rem; }
-}
-
 .price {
     font-size: 2.5rem;
     font-weight: 900;
@@ -562,6 +563,10 @@ nav ul li a:hover {
     background-color: var(--primary-blue);
     position: relative;
     overflow: hidden;
+    color: var(--white);
+}
+
+#gallery .section-title {
     color: var(--white);
 }
 
@@ -650,17 +655,46 @@ footer {
 
 /* Responsive */
 @media (max-width: 992px) {
+    .menu-toggle { display: flex; flex-direction: column; gap: 5px; cursor: pointer; margin-left: 20px; }
+    .menu-toggle .bar { width: 25px; height: 3px; background: var(--text-dark); transition: 0.3s; }
+    
+    #navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--white);
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        box-shadow: var(--shadow-bold);
+    }
+    #navbar.active { max-height: 350px; padding: 20px 0; }
+    nav ul { flex-direction: column; gap: 20px; align-items: center; }
+
     #hero-title { font-size: 3rem; }
     .feature-overlap { grid-template-columns: 1fr; margin-top: -50px; }
     .about-wrapper { flex-direction: column; gap: 50px; }
     .products-grid { grid-template-columns: 1fr; }
     .gallery-grid { grid-template-columns: 1fr 1fr; }
+    .b2b-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
     #hero-title { font-size: 2.5rem; }
+    .section-title { font-size: 2.2rem; }
     .gallery-grid { grid-template-columns: 1fr; }
     .contact-grid { grid-template-columns: 1fr; }
+    
+    .b2b-banner { height: 200px; }
+    .banner-content { padding: 30px 20px; }
+    .banner-content h3 { font-size: 1.5rem; }
+    .b2b-card { padding: 20px; }
+    .product-card { padding: 20px; }
+    .contact-card { padding: 30px; }
+    
+    .feature-card { padding: 30px 20px; }
 }
 
 /* Reveal Animations */
@@ -674,4 +708,5 @@ footer {
     opacity: 1;
     transform: translateY(0);
 }
+
 
