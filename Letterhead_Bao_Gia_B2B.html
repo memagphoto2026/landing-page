@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Báo Giá B2B - Memag</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;900&display=swap');
+        
+        :root {
+            --primary-blue: #114B5F;
+            --primary-orange: #E76F51;
+            --pastel-blue: #E0F7FA;
+            --pastel-orange: #FFF3E0;
+            --accent-blue: #2A9D8F;
+            --text-dark: #1D1D1D;
+            --text-muted: #666666;
+            --white: #FFFFFF;
+            --bg-light: #F8F9FA;
+        }
+
+        body {
+            background: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            padding: 40px 0;
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            -webkit-print-color-adjust: exact !important;
+            color-adjust: exact !important;
+            color: var(--text-dark);
+        }
+
+        .a4-page {
+            width: 210mm;
+            min-height: 297mm;
+            background: var(--white);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Modern Decorative Header */
+        .header-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 420px;
+            background: url('img/bg_letterhead.png') center/cover no-repeat;
+            z-index: 1;
+        }
+
+        .header-bg::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.1) 60%, transparent 100%);
+            z-index: 2;
+        }
+
+        .shape-accent-line {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 10px;
+            background: var(--primary-orange);
+            z-index: 10;
+        }
+
+        .content {
+            position: relative;
+            z-index: 20;
+            padding: 40px 25mm 20mm 25mm;
+            flex-grow: 1;
+        }
+
+        /* Header Layout */
+        .header-main {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 120px; /* Reduced space for better balance */
+        }
+
+        .logo-container {
+            width: 240px;
+            margin-bottom: 10px;
+            margin-left: -15px;
+        }
+
+        .logo-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: brightness(0) invert(1);
+        }
+
+        .slogan {
+            font-family: 'Playfair Display', serif;
+            font-size: 12pt;
+            font-style: italic;
+            color: var(--white);
+            margin-top: 5px;
+            letter-spacing: 1.5px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+            opacity: 0.95;
+        }
+
+        .doc-meta {
+            margin-top: 15px;
+            text-align: left;
+            font-size: 9pt;
+            color: var(--white);
+            background: rgba(17, 75, 95, 0.4);
+            padding: 6px 15px;
+            border-radius: 4px;
+            display: inline-block;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .doc-meta strong {
+            color: var(--primary-orange);
+        }
+
+        /* Footer Contact Section */
+        .page-footer {
+            margin-top: auto;
+            width: 100%;
+            position: relative;
+            z-index: 10;
+        }
+
+        .contact-footer {
+            border-top: 1px solid var(--pastel-blue);
+            padding: 30px 20mm 40px 20mm; /* Slightly less margin than content for a "wider" feel */
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .contact-group {
+            display: flex;
+            flex-direction: column;
+            width: 32%; /* Ensure equal width distribution without grid */
+            box-sizing: border-box;
+        }
+
+        .contact-group:nth-child(1) {
+            align-items: flex-start;
+            text-align: left;
+        }
+
+        .contact-group:nth-child(2) {
+            align-items: center;
+            text-align: center;
+        }
+
+        .contact-group:nth-child(3) {
+            align-items: flex-end;
+            text-align: right;
+        }
+
+        .contact-group-title {
+            font-size: 8.5pt;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--primary-orange);
+            font-weight: 800;
+            margin-bottom: 15px;
+            white-space: nowrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start; /* Align to top for multi-line text */
+            font-size: 9pt;
+            color: var(--primary-blue);
+            margin-bottom: 8px;
+            line-height: 1.4;
+            gap: 8px;
+            /* Removed white-space: nowrap so long text can wrap naturally */
+        }
+
+        .contact-group:nth-child(3) .contact-item {
+            flex-direction: row-reverse;
+        }
+
+        .contact-icon {
+            color: var(--primary-orange);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 16px;
+            flex-shrink: 0;
+            margin-top: 2px; /* Slight adjustment to align with the first line of text */
+        }
+
+        .contact-icon i {
+            font-size: 10pt;
+        }
+
+        /* Signature Section */
+        .signature-section {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 50px;
+        }
+
+        .signature-box {
+            text-align: center;
+            display: inline-block;
+        }
+
+        .signature-title {
+            font-size: 10pt;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 60px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .signature-date {
+            font-size: 8.5pt;
+            color: var(--text-muted);
+            font-style: italic;
+            border-top: 1px solid var(--pastel-blue);
+            padding-top: 10px;
+            display: inline-block;
+            min-width: 200px;
+        }
+
+        /* Typography & Headings */
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28pt;
+            color: var(--primary-blue);
+            margin: 0 0 10px 0;
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            font-size: 12pt;
+            color: var(--primary-orange);
+            font-weight: 700;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .subtitle::after {
+            content: '';
+            height: 2px;
+            flex-grow: 1;
+            background: var(--pastel-blue);
+        }
+
+        .intro-text {
+            font-size: 11pt;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 40px;
+            text-align: justify;
+        }
+
+        .intro-text strong {
+            color: var(--primary-blue);
+        }
+
+        /* Styled Table */
+        .table-container {
+            margin-bottom: 40px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid rgba(17, 75, 95, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 10.5pt;
+        }
+
+        th {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 18px 20px;
+            text-align: left;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 9pt;
+        }
+
+        td {
+            padding: 16px 20px;
+            border-bottom: 1px solid #edf2f7;
+            background-color: var(--white);
+        }
+
+        tr:nth-child(even) td {
+            background-color: #fcfdfe;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .price-tag {
+            color: var(--primary-orange);
+            font-weight: 800;
+            font-size: 12pt;
+        }
+
+        /* Section Styling */
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 40px 0 20px 0;
+        }
+
+        .section-header span {
+            width: 35px;
+            height: 35px;
+            background: var(--pastel-orange);
+            color: var(--primary-orange);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-weight: 800;
+            font-size: 12pt;
+        }
+
+        .section-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 15pt;
+            color: var(--primary-blue);
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .policy-list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .policy-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+            font-size: 10.5pt;
+            line-height: 1.6;
+        }
+
+        .policy-item::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-blue);
+            font-weight: 900;
+        }
+
+        .policy-item strong {
+            color: var(--primary-blue);
+        }
+
+        /* Contact Details Grid */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 60px;
+            padding: 25px;
+            background-color: var(--bg-light);
+            border-radius: 12px;
+            border: 1px solid rgba(17, 75, 95, 0.05);
+            font-size: 9pt;
+            color: var(--text-muted);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-icon {
+            color: var(--primary-orange);
+            font-weight: 700;
+        }
+
+        /* Footer & Signatures */
+        .page-footer {
+            margin-top: 60px;
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 50px;
+        }
+
+        .signature-box {
+            width: 200px;
+            text-align: center;
+        }
+
+        .signature-title {
+            font-size: 9pt;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 80px;
+        }
+
+        .signature-name {
+            font-weight: 700;
+            color: var(--primary-blue);
+            border-top: 1px solid var(--pastel-blue);
+            padding-top: 10px;
+            font-size: 10pt;
+        }
+
+        .bottom-accent {
+            height: 10px;
+            background: linear-gradient(to right, var(--primary-blue), var(--primary-orange));
+            width: 100%;
+        }
+
+        /* Print adjustments */
+        @media print {
+            body {
+                background: none;
+                padding: 0;
+            }
+            .a4-page {
+                box-shadow: none;
+                width: 100%;
+            }
+            [contenteditable="true"] {
+                border: none !important;
+                outline: none !important;
+            }
+        }
+
+        [contenteditable="true"]:focus {
+            outline: 2px solid var(--pastel-blue);
+            background: rgba(224, 247, 250, 0.3);
+            border-radius: 4px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="a4-page">
+        <div class="header-bg"></div>
+        <div class="shape-accent-line"></div>
+
+        <div class="content">
+            <div class="header-main">
+                <div class="logo-container">
+                    <img src="img/Logo_website_vn.png" alt="Memag Logo" class="logo-img">
+                </div>
+                <div class="slogan">Đồng hành cùng Studio - Kiến tạo giá trị bền vững</div>
+                <div class="doc-meta">
+                    <strong>Ngày:</strong> 13.05.2026 | <strong>Số:</strong> 2026/BG-B2B/05
+                </div>
+            </div>
+
+            <div class="intro-letter">
+                <p>Kính gửi: Quý Studio <span class="editable-field" contenteditable="true">[Tên Studio]</span>,</p>
+                <p>
+                    Lời đầu tiên, <strong>Memag Studio</strong> xin gửi lời chào trân trọng và lời chúc sức khỏe, thành công đến Quý đối tác.
+                </p>
+                <p>
+                    Với mong muốn đồng hành cùng các Studio trong việc nâng tầm trải nghiệm khách hàng, chúng tôi xin gửi đến Quý vị bảng báo giá sản phẩm <strong>Photo Magnet</strong> (Ảnh nam châm) cao cấp. Đây không chỉ là một món quà tặng, mà còn là một kỷ vật lưu giữ khoảnh khắc hạnh phúc bền vững theo thời gian.
+                </p>
+            </div>
+
+            <div class="section-header">
+                <span>1</span>
+                <h3>CHÍNH SÁCH DÀNH CHO ĐỐI TÁC (B2B)</h3>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th width="28%">Gói Hợp Tác</th>
+                            <th width="20%">Số Lượng</th>
+                            <th width="20%">Đơn Giá</th>
+                            <th width="32%">Đặc Quyền Bao Bì</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Trải nghiệm thử</strong></td>
+                            <td>10 - 20 cái</td>
+                            <td><span class="price-tag">16.000</span> <small>VNĐ</small></td>
+                            <td>Túi Zip OPP tiêu chuẩn</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Hợp tác chiến lược</strong></td>
+                            <td>50 - 100 cái</td>
+                            <td><span class="price-tag">14.500</span> <small>VNĐ</small></td>
+                            <td><strong>Tặng túi nhung khắc Logo</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Đối tác lâu dài</strong></td>
+                            <td>Trên 100 cái</td>
+                            <td><span class="price-tag">12.000</span> <small>VNĐ</small></td>
+                            <td><strong>Tặng túi nhung khắc Logo</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section-header">
+                <span>2</span>
+                <h3>CHÍNH SÁCH LƯU KHO & GỘP ĐƠN</h3>
+            </div>
+            
+            <div class="policy-list">
+                <div class="policy-item">
+                    <strong>Sản xuất linh hoạt:</strong> Đối tác thanh toán trước cho gói số lượng lớn để nhận đơn giá sỉ cực kỳ ưu đãi.
+                </div>
+                <div class="policy-item">
+                    <strong>Lưu kho 01 tháng:</strong> Memag hỗ trợ lưu trữ toàn bộ phôi và túi vải nhung đã khắc sẵn Logo của đối tác tại xưởng.
+                </div>
+                <div class="policy-item">
+                    <strong>In lẻ - Giá sỉ:</strong> Bất cứ khi nào có khách, đối tác chỉ cần gửi file ảnh. Memag sẽ lập tức in, đóng gói vào bao bì thương hiệu của Studio.
+                </div>
+                <div class="policy-item">
+                    <strong>Tối ưu vận hành:</strong> Giải pháp này giúp Studio tiết kiệm tối đa chi phí nhân sự đóng gói và không gian lưu trữ.
+                </div>
+            </div>
+
+            <div class="signature-section">
+                <div class="signature-box">
+                    <div class="signature-title">Đại diện Memag Studio</div>
+                    <div class="signature-date">Đã phát hành ngày 12/05/2026</div>
+                </div>
+            </div>
+        </div>
+        <footer class="page-footer">
+            <div class="contact-footer">
+                <div class="contact-group">
+                    <div class="contact-group-title">Trụ sở TP. Hồ Chí Minh</div>
+                    <div class="contact-item">
+                        <span class="contact-icon"><i class="fa-solid fa-location-dot"></i></span>
+                        K26 Đường D15A, River Park, Thủ Đức
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon"><i class="fa-solid fa-phone"></i></span>
+                        098 171 21 57 (Zalo)
+                    </div>
+                </div>
+                
+                <div class="contact-group">
+                    <div class="contact-group-title">Chi nhánh Đà Lạt</div>
+                    <div class="contact-item">
+                        <span class="contact-icon"><i class="fa-solid fa-location-dot"></i></span>
+                        348/5 Phan Đình Phùng, TP. Đà Lạt
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon"><i class="fa-solid fa-phone"></i></span>
+                        0817 227 918 (Zalo)
+                    </div>
+                </div>
+
+                <div class="contact-group">
+                    <div class="contact-group-title">Kết nối trực tuyến</div>
+                    <div class="contact-item">
+                        <span class="contact-icon"><i class="fa-solid fa-globe"></i></span>
+                        www.memag.art
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon"><i class="fa-solid fa-envelope"></i></span>
+                        hello@memag.art
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-accent"></div>
+        </footer>
+    </div>
+</body>
+</html>
