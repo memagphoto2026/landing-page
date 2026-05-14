@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Báo Giá B2B - Memag</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;900&display=swap&subset=vietnamese');
         
         :root {
             --primary-blue: #114B5F;
@@ -25,10 +25,12 @@
             justify-content: center;
             padding: 40px 0;
             margin: 0;
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Montserrat', Arial, sans-serif;
             -webkit-print-color-adjust: exact !important;
             color-adjust: exact !important;
             color: var(--text-dark);
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
         }
 
         .a4-page {
@@ -87,48 +89,51 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            margin-bottom: 120px; /* Reduced space for better balance */
+            height: 350px; /* Cố định chiều cao để đẩy slogan xuống đáy hình */
+            margin-bottom: 50px; /* Thu hẹp khoảng trống với nội dung bên dưới */
         }
 
         .logo-container {
-            width: 240px;
-            margin-bottom: 10px;
-            margin-left: -15px;
+            width: 200px; /* Tăng 20% để logo nổi bật hơn */
+            margin-bottom: auto; /* Đẩy toàn bộ phần chữ bên dưới xuống đáy */
+            margin-left: -10px;
         }
 
         .logo-img {
             width: 100%;
             height: auto;
             display: block;
-            filter: brightness(0) invert(1);
         }
 
         .slogan {
-            font-family: 'Playfair Display', serif;
-            font-size: 12pt;
-            font-style: italic;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11pt;
+            font-weight: 500;
             color: var(--white);
-            margin-top: 5px;
-            letter-spacing: 1.5px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.6);
-            opacity: 0.95;
+            margin-top: 8px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+            opacity: 0.9;
         }
 
         .doc-meta {
-            margin-top: 15px;
+            margin-top: 25px;
             text-align: left;
             font-size: 9pt;
             color: var(--white);
-            background: rgba(17, 75, 95, 0.4);
-            padding: 6px 15px;
-            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 8px 18px;
+            border-radius: 50px;
             display: inline-block;
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-weight: 500;
         }
 
         .doc-meta strong {
-            color: var(--primary-orange);
+            color: var(--white);
+            font-weight: 700;
         }
 
         /* Footer Contact Section */
@@ -244,10 +249,11 @@
         /* Typography & Headings */
         h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 28pt;
+            font-size: 32pt;
             color: var(--primary-blue);
             margin: 0 0 10px 0;
             line-height: 1.1;
+            font-weight: 900;
         }
 
         .subtitle {
@@ -473,11 +479,11 @@
         <div class="content">
             <div class="header-main">
                 <div class="logo-container">
-                    <img src="img/Logo_website_vn.png" alt="Memag Logo" class="logo-img">
+                    <img src="img/logo_dung_trang.png" alt="Memag Logo" class="logo-img">
                 </div>
                 <div class="slogan">Đồng hành cùng Studio - Kiến tạo giá trị bền vững</div>
                 <div class="doc-meta">
-                    <strong>Ngày:</strong> 13.05.2026 | <strong>Số:</strong> 2026/BG-B2B/05
+                    <strong>Ngày:</strong> 14.05.2026 | <strong>Số:</strong> 2026/BG-B2B/05
                 </div>
             </div>
 
