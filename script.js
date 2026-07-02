@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+function initializeApp() {
     const header = document.getElementById('header');
     const btnVi = document.getElementById('btn-vi');
     const btnEn = document.getElementById('btn-en');
@@ -164,7 +164,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Close Success Overlay
     const closeSuccess = document.getElementById('close-success');
     if (closeSuccess) {
         closeSuccess.addEventListener('click', () => {
@@ -175,4 +174,26 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-});
+
+    // FAQ Accordion Logic
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+            // Close other items
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('active');
+                }
+            });
+            // Toggle current item
+            item.classList.toggle('active');
+        });
+    });
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeApp);
+} else {
+    initializeApp();
+}
